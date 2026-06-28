@@ -40,42 +40,44 @@ const theme = createTheme({
   },
 
   typography: {
-    // Montserrat — clean geometric sans for body, navigation, and UI text
-    fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif',
-    // Cormorant Garamond — elegant high-contrast serif for display headings
+    // Plus Jakarta Sans — modern, rounded, very clean for body + UI
+    fontFamily: '"Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif',
+
     h1: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
+      fontWeight: 800,
+      letterSpacing: '-1px',
+      lineHeight: 1.05,
+    },
+    h2: {
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
       fontWeight: 700,
       letterSpacing: '-0.5px',
       lineHeight: 1.1,
     },
-    h2: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 700,
-      letterSpacing: '-0.25px',
-      lineHeight: 1.15,
-    },
     h3: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-      lineHeight: 1.2,
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
+      fontWeight: 700,
+      letterSpacing: '-0.3px',
+      lineHeight: 1.18,
     },
     h4: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
       fontWeight: 600,
       lineHeight: 1.25,
     },
     h5: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
       fontWeight: 600,
     },
     h6: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontFamily: '"Syne", "Plus Jakarta Sans", sans-serif',
       fontWeight: 600,
     },
     subtitle1: {
       fontWeight: 500,
-      letterSpacing: '0.15px',
+      letterSpacing: '0.1px',
+      lineHeight: 1.6,
     },
     subtitle2: {
       fontWeight: 600,
@@ -83,25 +85,29 @@ const theme = createTheme({
     },
     body1: {
       fontWeight: 400,
-      lineHeight: 1.7,
+      lineHeight: 1.75,
+      letterSpacing: '0.1px',
     },
     body2: {
       fontWeight: 400,
       lineHeight: 1.65,
+      letterSpacing: '0.1px',
     },
     button: {
-      fontWeight: 600,
-      letterSpacing: '0.3px',
+      fontWeight: 700,
+      letterSpacing: '0.4px',
+      textTransform: 'none' as const,
     },
     overline: {
-      fontWeight: 600,
-      letterSpacing: '2px',
+      fontWeight: 700,
+      letterSpacing: '3px',
+      fontSize: '0.7rem',
     },
     caption: {
-      letterSpacing: '0.2px',
+      letterSpacing: '0.3px',
+      fontWeight: 400,
     },
   },
-
   components: {
     MuiButton: {
       styleOverrides: {
