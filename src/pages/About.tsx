@@ -84,7 +84,7 @@ const values = [
   {
     icon: <FavoriteIcon sx={{ fontSize: 28, color: T.terracottaLight }} />,
     title: 'Community Rooted',
-    desc: 'Brewed & Baked was built by the community, for the community. We give back through local events, charity bakes, and skill workshops.',
+    desc: 'Apna Adda was built by the community, for the community. We give back through local events, charity bakes, and skill workshops.',
   },
   {
     icon: <EmojiEventsIcon sx={{ fontSize: 28, color: T.terracottaLight }} />,
@@ -94,7 +94,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2009', event: 'Brewed & Baked opens its first tiny 10-seat café on Café Street, Bandra.' },
+  { year: '2009', event: 'Apna Adda opens its first tiny 10-seat café on Café Street, Bandra.' },
   { year: '2012', event: 'Launched our full restaurant menu, expanding to 60 covers and adding a kitchen team.' },
   { year: '2016', event: 'Nisha wins the National Barista Championship, putting us on the specialty coffee map.' },
   { year: '2019', event: 'Expanded to a second floor — outdoor terrace seating with garden views.' },
@@ -171,7 +171,7 @@ export default function About() {
             sx={{ color: T.creamMid, maxWidth: 560, mx: 'auto', lineHeight: 1.85 }}
           >
             From a tiny 10-seat café to Mumbai's most beloved culinary destination — here's
-            how Brewed & Baked was born.
+            how Apna Adda was born.
           </Typography>
         </Container>
 
@@ -231,7 +231,7 @@ export default function About() {
                 The queue stretched down the street.
               </Typography>
               <Typography sx={{ color: T.creamMid, lineHeight: 1.9 }}>
-                Today, Brewed & Baked is a full café-restaurant with 80+ covers, an award-winning
+                Today, Apna Adda is a full café-restaurant with 80+ covers, an award-winning
                 barista team, and a menu that changes with the seasons — but the soul remains
                 exactly the same: making every guest feel at home.
               </Typography>

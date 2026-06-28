@@ -39,6 +39,69 @@ const theme = createTheme({
     borderRadius: 10,
   },
 
+  typography: {
+    // Montserrat — clean geometric sans for body, navigation, and UI text
+    fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif',
+    // Cormorant Garamond — elegant high-contrast serif for display headings
+    h1: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 700,
+      letterSpacing: '-0.5px',
+      lineHeight: 1.1,
+    },
+    h2: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 700,
+      letterSpacing: '-0.25px',
+      lineHeight: 1.15,
+    },
+    h3: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 600,
+      lineHeight: 1.2,
+    },
+    h4: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 600,
+      lineHeight: 1.25,
+    },
+    h5: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 600,
+    },
+    h6: {
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontWeight: 500,
+      letterSpacing: '0.15px',
+    },
+    subtitle2: {
+      fontWeight: 600,
+      letterSpacing: '0.1px',
+    },
+    body1: {
+      fontWeight: 400,
+      lineHeight: 1.7,
+    },
+    body2: {
+      fontWeight: 400,
+      lineHeight: 1.65,
+    },
+    button: {
+      fontWeight: 600,
+      letterSpacing: '0.3px',
+    },
+    overline: {
+      fontWeight: 600,
+      letterSpacing: '2px',
+    },
+    caption: {
+      letterSpacing: '0.2px',
+    },
+  },
+
   components: {
     MuiButton: {
       styleOverrides: {

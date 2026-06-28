@@ -73,13 +73,13 @@ export default function Footer() {
                 <Typography
                   variant="h5"
                   sx={{
-                    fontFamily: '"Playfair Display", serif',
+                    fontFamily: '"Cormorant Garamond", serif',
                     fontWeight: 700,
                     lineHeight: 1.1,
                     color: '#FFFFFF',
                   }}
                 >
-                  Brewed & Baked
+                  Apna Adda
                 </Typography>
                 <Typography
                   variant="caption"
@@ -250,7 +250,7 @@ export default function Footer() {
                 <EmailIcon sx={{ fontSize: 17, color: '#E9C46A', flexShrink: 0 }} />
                 <Typography
                   component="a"
-                  href="mailto:hello@brewedandbaked.in"
+                  href="mailto:hello@apnaadda.in"
                   variant="body2"
                   sx={{
                     color: muted,
@@ -259,7 +259,7 @@ export default function Footer() {
                     '&:hover': { color: '#52B788' },
                   }}
                 >
-                  hello@brewedandbaked.in
+                  hello@apnaadda.in
                 </Typography>
               </Box>
             </Stack>
@@ -278,7 +278,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="caption" sx={{ color: muted }}>
-            © {new Date().getFullYear()} Brewed & Baked Café & Restaurant. All rights reserved.
+            © {new Date().getFullYear()} Apna Adda Café & Restaurant. All rights reserved.
           </Typography>
           <Typography variant="caption" sx={{ color: muted }}>
             Made with ☕ in Mumbai

@@ -110,15 +110,15 @@ export default function Navbar() {
                 <Typography
                   variant="h6"
                   sx={{
-                    fontFamily: '"Playfair Display", serif',
+                    fontFamily: '"Cormorant Garamond", serif',
                     fontWeight: 700,
-                    fontSize: '1.2rem',
+                    fontSize: '1.45rem',
                     lineHeight: 1.1,
                     color: isTransparent ? '#FFFFFF' : 'primary.dark',
                     transition: 'color 0.35s ease',
                   }}
                 >
-                  Brewed & Baked
+                  Apna Adda
                 </Typography>
                 <Typography
                   variant="caption"
@@ -249,13 +249,13 @@ export default function Navbar() {
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: '"Playfair Display", serif',
+                  fontFamily: '"Cormorant Garamond", serif',
                   fontWeight: 700,
                   color: 'primary.dark',
-                  fontSize: '1.1rem',
+                  fontSize: '1.3rem',
                 }}
               >
-                Brewed & Baked
+                Apna Adda
               </Typography>
             </Box>
             <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'text.secondary' }}>

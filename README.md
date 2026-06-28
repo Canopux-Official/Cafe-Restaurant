@@ -1,4 +1,4 @@
-# ☕ Brewed & Baked — Café & Restaurant Website
+# ☕ Apna Adda — Café & Restaurant Website
 
 A modern, fully responsive café and restaurant website built with **React + Vite + TypeScript**, **Material UI**, and **React Router DOM**.
 

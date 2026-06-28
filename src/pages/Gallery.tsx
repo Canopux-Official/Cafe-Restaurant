@@ -76,7 +76,7 @@ export default function Gallery() {
             <Box component="span" sx={{ color: '#D9956F', fontStyle: 'italic' }}>Our World</Box>
           </Typography>
           <Typography variant="body1" sx={{ color: 'rgba(250,247,242,0.72)', maxWidth: 480, mx: 'auto', lineHeight: 1.85 }}>
-            Every corner of Brewed & Baked is designed to delight — from our coffee bar to the garden seating.
+            Every corner of Apna Adda is designed to delight — from our coffee bar to the garden seating.
           </Typography>
         </Container>
         <Box sx={{ position: 'absolute', bottom: -2, left: 0, right: 0 }}>

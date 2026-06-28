@@ -73,7 +73,7 @@
 // const testimonials = [
 //   { name: 'Priya Sharma', role: 'Food Blogger', review: 'Absolutely the best café in Mumbai! The truffle pasta and caramel latte are life-changing. I come every weekend.', rating: 5, avatar: 'P' },
 //   { name: 'Arjun Menon', role: 'Architect', review: 'The ambience is warm and inviting — perfect for a work session or romantic dinner. The lava cake deserves its own award.', rating: 5, avatar: 'A' },
-//   { name: 'Sneha Kapoor', role: 'Interior Designer', review: 'Brewed & Baked nails both food and aesthetics. The weekend brunch platter is a feast for eyes and stomach!', rating: 5, avatar: 'S' },
+//   { name: 'Sneha Kapoor', role: 'Interior Designer', review: 'Apna Adda nails both food and aesthetics. The weekend brunch platter is a feast for eyes and stomach!', rating: 5, avatar: 'S' },
 //   { name: 'Rahul Verma', role: 'Tech Founder', review: 'My go-to spot for focus work. Great wifi, even better coffee. The rose cardamom latte is something else entirely.', rating: 5, avatar: 'R' },
 //   { name: 'Meera Nair', role: 'Chef', review: 'As a chef myself, I am impressed by the attention to detail. Ingredients are top-notch and every dish is thoughtfully plated.', rating: 5, avatar: 'M' },
 // ];
@@ -544,7 +544,7 @@ const features = [
 const testimonials = [
   { name: 'Priya Sharma', role: 'Food Blogger', review: 'Absolutely the best café in Mumbai! The truffle pasta and caramel latte are life-changing. I come every weekend.', rating: 5, avatar: 'P' },
   { name: 'Arjun Menon', role: 'Architect', review: 'The ambience is warm and inviting — perfect for a work session or romantic dinner. The lava cake deserves its own award.', rating: 5, avatar: 'A' },
-  { name: 'Sneha Kapoor', role: 'Interior Designer', review: 'Brewed & Baked nails both food and aesthetics. The weekend brunch platter is a feast for eyes and stomach!', rating: 5, avatar: 'S' },
+  { name: 'Sneha Kapoor', role: 'Interior Designer', review: 'Apna Adda nails both food and aesthetics. The weekend brunch platter is a feast for eyes and stomach!', rating: 5, avatar: 'S' },
   { name: 'Rahul Verma', role: 'Tech Founder', review: 'My go-to spot for focus work. Great wifi, even better coffee. The rose cardamom latte is something else entirely.', rating: 5, avatar: 'R' },
   { name: 'Meera Nair', role: 'Chef', review: 'As a chef myself, I am impressed by the attention to detail. Ingredients are top-notch and every dish is thoughtfully plated.', rating: 5, avatar: 'M' },
 ];
@@ -580,7 +580,7 @@ export default function Home() {
         <Box
           component="img"
           src={HERO_IMAGE}
-          alt="Brewed & Baked café interior"
+          alt="Apna Adda café interior"
           sx={{
             position: 'absolute',
             inset: 0,

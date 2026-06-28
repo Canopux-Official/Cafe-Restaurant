@@ -83,8 +83,8 @@ const contactInfo = [
   {
     icon: <EmailIcon sx={{ color: T.terracottaLight, fontSize: 26 }} />,
     title: 'Email Us',
-    lines: ['hello@brewedandbaked.in', 'events@brewedandbaked.in'],
-    href: 'mailto:hello@brewedandbaked.in',
+    lines: ['hello@apnaadda.in', 'events@apnaadda.in'],
+    href: 'mailto:hello@apnaadda.in',
     linkLabel: 'Send Email →',
   },
   {
