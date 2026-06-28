@@ -25,6 +25,7 @@ import LocalCafeIcon from '@mui/icons-material/LocalCafe';
 const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'Menu', path: '/menu' },
+  { label: 'Gallery', path: '/gallery' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -53,45 +54,68 @@ export default function Navbar() {
 
   const isHome = location.pathname === '/';
 
+  // On home + not scrolled: transparent over hero image
+  // Otherwise: white bar
+  const isTransparent = isHome && !scrolled;
+
   return (
     <HideOnScroll>
       <AppBar
         position="fixed"
-        elevation={scrolled || !isHome ? 4 : 0}
+        elevation={0}
         sx={{
-          backgroundColor: scrolled || !isHome
-            ? 'primary.main'
-            : 'transparent',
-          backdropFilter: scrolled || !isHome ? 'none' : 'blur(8px)',
-          transition: 'background-color 0.4s ease, box-shadow 0.4s ease',
+          backgroundColor: isTransparent ? 'transparent' : '#FFFFFF',
+          backdropFilter: isTransparent ? 'blur(6px)' : 'none',
+          borderBottom: isTransparent ? 'none' : '1px solid #E0DDD9',
+          transition: 'background-color 0.35s ease, border-color 0.35s ease',
         }}
       >
         <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ py: 0.5 }}>
-            {/* Logo */}
+          <Toolbar disableGutters sx={{ py: 1 }}>
+
+            {/* ── Logo ── */}
             <Box
               component={Link}
               to="/"
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1,
+                gap: 1.2,
                 textDecoration: 'none',
-                color: 'primary.contrastText',
                 flexGrow: { xs: 1, md: 0 },
-                mr: { md: 4 },
+                mr: { md: 5 },
               }}
             >
-              <LocalCafeIcon sx={{ fontSize: 32, color: 'secondary.light' }} />
+              <Box
+                sx={{
+                  width: 38,
+                  height: 38,
+                  borderRadius: '10px',
+                  bgcolor: isTransparent ? 'rgba(233,196,106,0.18)' : 'rgba(45,106,79,0.08)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background-color 0.35s ease',
+                }}
+              >
+                <LocalCafeIcon
+                  sx={{
+                    fontSize: 22,
+                    color: isTransparent ? '#E9C46A' : 'primary.main',
+                    transition: 'color 0.35s ease',
+                  }}
+                />
+              </Box>
               <Box>
                 <Typography
                   variant="h6"
                   sx={{
                     fontFamily: '"Playfair Display", serif',
                     fontWeight: 700,
-                    fontSize: '1.25rem',
+                    fontSize: '1.2rem',
                     lineHeight: 1.1,
-                    color: 'inherit',
+                    color: isTransparent ? '#FFFFFF' : 'primary.dark',
+                    transition: 'color 0.35s ease',
                   }}
                 >
                   Brewed & Baked
@@ -99,11 +123,12 @@ export default function Navbar() {
                 <Typography
                   variant="caption"
                   sx={{
-                    color: 'secondary.light',
+                    color: isTransparent ? 'rgba(255,255,255,0.55)' : 'text.secondary',
                     letterSpacing: '2px',
                     textTransform: 'uppercase',
-                    fontSize: '0.6rem',
+                    fontSize: '0.58rem',
                     display: 'block',
+                    transition: 'color 0.35s ease',
                   }}
                 >
                   Café & Restaurant
@@ -111,64 +136,83 @@ export default function Navbar() {
               </Box>
             </Box>
 
-            {/* Desktop Nav */}
+            {/* ── Desktop Nav ── */}
             {!isMobile && (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexGrow: 1 }}>
-                {navLinks.map((link) => (
-                  <Button
-                    key={link.path}
-                    component={Link}
-                    to={link.path}
-                    sx={{
-                      color: 'primary.contrastText',
-                      borderRadius: '50px',
-                      px: 2,
-                      py: 0.75,
-                      fontWeight: location.pathname === link.path ? 700 : 400,
-                      position: 'relative',
-                      '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        bottom: 4,
-                        left: '50%',
-                        transform: location.pathname === link.path ? 'translateX(-50%) scaleX(1)' : 'translateX(-50%) scaleX(0)',
-                        width: '60%',
-                        height: '2px',
-                        backgroundColor: 'secondary.light',
-                        transition: 'transform 0.3s ease',
-                        borderRadius: '2px',
-                      },
-                      '&:hover::after': {
-                        transform: 'translateX(-50%) scaleX(1)',
-                      },
-                    }}
-                  >
-                    {link.label}
-                  </Button>
-                ))}
+                {navLinks.map((link) => {
+                  const active = location.pathname === link.path;
+                  return (
+                    <Button
+                      key={link.path}
+                      component={Link}
+                      to={link.path}
+                      sx={{
+                        color: isTransparent
+                          ? active ? '#E9C46A' : 'rgba(255,255,255,0.85)'
+                          : active ? 'primary.main' : 'text.secondary',
+                        borderRadius: '8px',
+                        px: 2,
+                        py: 0.8,
+                        fontWeight: active ? 700 : 500,
+                        fontSize: '0.9rem',
+                        position: 'relative',
+                        transition: 'color 0.25s ease',
+                        '&::after': {
+                          content: '""',
+                          position: 'absolute',
+                          bottom: 5,
+                          left: '50%',
+                          transform: active
+                            ? 'translateX(-50%) scaleX(1)'
+                            : 'translateX(-50%) scaleX(0)',
+                          width: '50%',
+                          height: '2px',
+                          backgroundColor: isTransparent ? '#E9C46A' : '#2D6A4F',
+                          transition: 'transform 0.25s ease, background-color 0.35s ease',
+                          borderRadius: '2px',
+                        },
+                        '&:hover': {
+                          bgcolor: isTransparent
+                            ? 'rgba(255,255,255,0.08)'
+                            : 'rgba(45,106,79,0.06)',
+                          color: isTransparent ? '#FFFFFF' : 'primary.main',
+                        },
+                        '&:hover::after': {
+                          transform: 'translateX(-50%) scaleX(1)',
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Button>
+                  );
+                })}
               </Box>
             )}
 
-            {/* Reserve CTA */}
+            {/* ── Reserve CTA ── */}
             {!isMobile && (
               <Button
                 component={Link}
                 to="/reservations"
                 variant="contained"
-                color="secondary"
-                sx={{ ml: 2, fontWeight: 700, whiteSpace: 'nowrap' }}
+                color={isTransparent ? 'secondary' : 'primary'}
+                sx={{
+                  ml: 2,
+                  fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                  transition: 'background 0.35s ease',
+                }}
               >
                 Reserve a Table
               </Button>
             )}
 
-            {/* Mobile Menu Icon */}
+            {/* ── Mobile Menu Icon ── */}
             {isMobile && (
               <IconButton
-                color="inherit"
                 edge="end"
                 onClick={() => setDrawerOpen(true)}
-                sx={{ color: 'primary.contrastText' }}
+                sx={{ color: isTransparent ? '#FFFFFF' : 'primary.main' }}
               >
                 <MenuIcon />
               </IconButton>
@@ -176,70 +220,92 @@ export default function Navbar() {
           </Toolbar>
         </Container>
 
-        {/* Mobile Drawer */}
+        {/* ── Mobile Drawer ── */}
         <Drawer
           anchor="right"
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
           PaperProps={{
             sx: {
-              width: 280,
-              bgcolor: 'primary.dark',
-              color: 'primary.contrastText',
+              width: 290,
+              bgcolor: '#FFFFFF',
               pt: 2,
             },
           }}
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, mb: 2 }}>
+          {/* Drawer header */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              px: 2.5,
+              pb: 2,
+              borderBottom: '1px solid #E0DDD9',
+            }}
+          >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <LocalCafeIcon sx={{ color: 'secondary.light' }} />
-              <Typography variant="h6" sx={{ fontFamily: '"Playfair Display", serif', fontWeight: 700 }}>
+              <LocalCafeIcon sx={{ color: 'primary.main', fontSize: 22 }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: '"Playfair Display", serif',
+                  fontWeight: 700,
+                  color: 'primary.dark',
+                  fontSize: '1.1rem',
+                }}
+              >
                 Brewed & Baked
               </Typography>
             </Box>
-            <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'primary.contrastText' }}>
+            <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'text.secondary' }}>
               <CloseIcon />
             </IconButton>
           </Box>
 
-          <List>
-            {navLinks.map((link) => (
-              <ListItem key={link.path} disablePadding>
-                <ListItemButton
-                  component={Link}
-                  to={link.path}
-                  onClick={() => setDrawerOpen(false)}
-                  selected={location.pathname === link.path}
-                  sx={{
-                    py: 1.5,
-                    px: 3,
-                    '&.Mui-selected': {
-                      bgcolor: 'rgba(200,148,58,0.2)',
-                      borderLeft: '3px solid',
-                      borderColor: 'secondary.main',
-                    },
-                    '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' },
-                  }}
-                >
-                  <ListItemText
-                    primary={link.label}
-                    primaryTypographyProps={{
-                      fontWeight: location.pathname === link.path ? 700 : 400,
-                      fontSize: '1.05rem',
+          <List sx={{ pt: 1 }}>
+            {navLinks.map((link) => {
+              const active = location.pathname === link.path;
+              return (
+                <ListItem key={link.path} disablePadding>
+                  <ListItemButton
+                    component={Link}
+                    to={link.path}
+                    onClick={() => setDrawerOpen(false)}
+                    sx={{
+                      py: 1.4,
+                      px: 3,
+                      borderLeft: active ? '3px solid' : '3px solid transparent',
+                      borderColor: active ? 'primary.main' : 'transparent',
+                      bgcolor: active ? 'rgba(45,106,79,0.06)' : 'transparent',
+                      '&:hover': {
+                        bgcolor: 'rgba(45,106,79,0.06)',
+                        borderColor: 'primary.light',
+                      },
                     }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-            <ListItem sx={{ px: 3, pt: 2 }}>
+                  >
+                    <ListItemText
+                      primary={link.label}
+                      primaryTypographyProps={{
+                        fontWeight: active ? 700 : 400,
+                        fontSize: '1rem',
+                        color: active ? 'primary.main' : 'text.primary',
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+
+            <ListItem sx={{ px: 2.5, pt: 2.5 }}>
               <Button
                 component={Link}
                 to="/reservations"
                 variant="contained"
-                color="secondary"
+                color="primary"
                 fullWidth
                 onClick={() => setDrawerOpen(false)}
-                sx={{ fontWeight: 700 }}
+                sx={{ fontWeight: 700, py: 1.3 }}
               >
                 Reserve a Table
               </Button>
