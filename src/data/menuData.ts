@@ -1,0 +1,211 @@
+export interface MenuItem {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  category: string;
+  badge?: string;
+  emoji: string;
+  dietary?: string[];
+}
+
+export const menuCategories = [
+  'All',
+  'Breakfast',
+  'Café Drinks',
+  'Lunch & Mains',
+  'Desserts',
+  'Specials',
+];
+
+export const menuItems: MenuItem[] = [
+  // Breakfast
+  {
+    id: 1,
+    name: 'Avocado Toast',
+    description: 'Sourdough bread topped with smashed avocado, cherry tomatoes, feta crumbles, and a poached egg.',
+    price: '₹320',
+    category: 'Breakfast',
+    badge: 'Best Seller',
+    emoji: '🥑',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 2,
+    name: 'Classic French Toast',
+    description: 'Thick brioche slices dipped in vanilla custard, pan-fried golden, served with maple syrup & berries.',
+    price: '₹280',
+    category: 'Breakfast',
+    emoji: '🍞',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 3,
+    name: 'Full English Breakfast',
+    description: 'Eggs your way, crispy bacon, sausage, grilled tomato, mushrooms, baked beans, and toasted bread.',
+    price: '₹480',
+    category: 'Breakfast',
+    emoji: '🍳',
+  },
+  {
+    id: 4,
+    name: 'Açaí Bowl',
+    description: 'Blended açaí with banana, topped with granola, fresh fruits, honey drizzle, and chia seeds.',
+    price: '₹360',
+    category: 'Breakfast',
+    badge: 'Healthy',
+    emoji: '🫐',
+    dietary: ['Vegan', 'Gluten-Free'],
+  },
+  // Café Drinks
+  {
+    id: 5,
+    name: 'Signature Espresso',
+    description: 'Double-shot espresso from our house blend of single-origin Ethiopian and Colombian beans.',
+    price: '₹120',
+    category: 'Café Drinks',
+    emoji: '☕',
+  },
+  {
+    id: 6,
+    name: 'Caramel Latte',
+    description: 'Velvety steamed whole milk, espresso, homemade caramel sauce, topped with silky microfoam.',
+    price: '₹220',
+    category: 'Café Drinks',
+    badge: 'Fan Favourite',
+    emoji: '🥛',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 7,
+    name: 'Matcha Latte',
+    description: 'Ceremonial-grade Japanese matcha whisked with steamed oat milk and a touch of vanilla.',
+    price: '₹240',
+    category: 'Café Drinks',
+    emoji: '🍵',
+    dietary: ['Vegan'],
+  },
+  {
+    id: 8,
+    name: 'Cold Brew Float',
+    description: 'Slow-steeped 18-hour cold brew poured over a scoop of vanilla bean ice cream.',
+    price: '₹260',
+    category: 'Café Drinks',
+    badge: 'Summer Hit',
+    emoji: '🧊',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 9,
+    name: 'Rose Cardamom Latte',
+    description: 'Espresso infused with rose water, ground cardamom, and steamed milk — a fragrant delight.',
+    price: '₹250',
+    category: 'Café Drinks',
+    emoji: '🌹',
+    dietary: ['Vegetarian'],
+  },
+  // Lunch & Mains
+  {
+    id: 10,
+    name: 'Truffle Mushroom Pasta',
+    description: 'Tagliatelle tossed with wild mushrooms, black truffle oil, parmesan cream, and fresh thyme.',
+    price: '₹580',
+    category: 'Lunch & Mains',
+    badge: 'Chef\'s Pick',
+    emoji: '🍝',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 11,
+    name: 'Grilled Chicken Burger',
+    description: 'Herb-marinated chicken breast, smoked gouda, caramelized onions, house slaw, and garlic aioli.',
+    price: '₹520',
+    category: 'Lunch & Mains',
+    emoji: '🍔',
+  },
+  {
+    id: 12,
+    name: 'Mediterranean Bowl',
+    description: 'Falafel, hummus, tabbouleh, roasted veggies, olives, and tzatziki over fluffy couscous.',
+    price: '₹460',
+    category: 'Lunch & Mains',
+    emoji: '🥙',
+    dietary: ['Vegan'],
+  },
+  {
+    id: 13,
+    name: 'Pan-Seared Salmon',
+    description: 'Atlantic salmon with lemon caper butter, asparagus, and herb roasted baby potatoes.',
+    price: '₹680',
+    category: 'Lunch & Mains',
+    emoji: '🐟',
+    dietary: ['Gluten-Free'],
+  },
+  {
+    id: 14,
+    name: 'Margherita Flatbread',
+    description: 'Thin-crust flatbread with San Marzano tomato sauce, fresh mozzarella, and basil.',
+    price: '₹380',
+    category: 'Lunch & Mains',
+    emoji: '🍕',
+    dietary: ['Vegetarian'],
+  },
+  // Desserts
+  {
+    id: 15,
+    name: 'Warm Chocolate Lava Cake',
+    description: 'Dark chocolate fondant with a molten centre, served with vanilla ice cream and berry compote.',
+    price: '₹340',
+    category: 'Desserts',
+    badge: 'Must Try',
+    emoji: '🎂',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 16,
+    name: 'New York Cheesecake',
+    description: 'Classic dense cheesecake on a graham cracker crust, topped with seasonal fruit coulis.',
+    price: '₹280',
+    category: 'Desserts',
+    emoji: '🍰',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 17,
+    name: 'Tiramisu',
+    description: 'Ladyfingers soaked in espresso, layered with mascarpone cream and dusted with cacao.',
+    price: '₹320',
+    category: 'Desserts',
+    emoji: '☕',
+    dietary: ['Vegetarian'],
+  },
+  {
+    id: 18,
+    name: 'Mango Panna Cotta',
+    description: 'Silky Italian cream dessert infused with vanilla, topped with fresh Alphonso mango coulis.',
+    price: '₹260',
+    category: 'Desserts',
+    emoji: '🥭',
+    dietary: ['Vegetarian', 'Gluten-Free'],
+  },
+  // Specials
+  {
+    id: 19,
+    name: 'Weekend Brunch Platter',
+    description: 'An abundant sharing board — eggs, smoked salmon, artisan cheeses, fruits, pastries & condiments.',
+    price: '₹980',
+    category: 'Specials',
+    badge: 'Weekend Only',
+    emoji: '🍱',
+  },
+  {
+    id: 20,
+    name: 'Afternoon Tea Set',
+    description: 'Assorted finger sandwiches, freshly baked scones with clotted cream, and a pot of loose-leaf tea.',
+    price: '₹750',
+    category: 'Specials',
+    badge: 'Seasonal',
+    emoji: '🫖',
+    dietary: ['Vegetarian'],
+  },
+];
